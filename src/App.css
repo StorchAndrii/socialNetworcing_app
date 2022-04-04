@@ -12,19 +12,3 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-.header {
-  grid-area: header;
-  background-color: aqua;
-}
-.header img {
-  width: 40px;
-}
-.nav {
-  grid-area: nav;
-  background-color: bisque;
-}
-.content {
-  grid-area: content;
-  background-color: darkgray;
-}
-
