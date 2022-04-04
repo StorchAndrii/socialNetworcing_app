@@ -1,4 +1,15 @@
 .content {
     grid-area: content;
-    background-color: darkgray;
+    background-color: rgba(241, 230, 207, 0.144);
+    border-radius: 20px;
+  }
+
+  .imgBar{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .avatar{
+    height: 160px;
   }

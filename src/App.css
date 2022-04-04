@@ -1,7 +1,7 @@
 .app-wrapper {
-    /* grid - разделяет элементы по колонам и рядам.  */
+  /* grid - разделяет элементы по колонам и рядам.  */
   display: grid;
-/*  areas - расставляет обьекты согласно их псевдонимам */
+  /*  areas - расставляет обьекты согласно их псевдонимам */
   grid-template-areas:
     "header header header"
     "nav content content";
