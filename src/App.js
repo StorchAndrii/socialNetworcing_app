@@ -1,12 +1,14 @@
-import './App.css';
-import Header from './Header';
-import Technologies from './Technologies';
+import "./App.css";
+import Footer from "./Footer";
+import Header from "./Header";
+import Technologies from "./Technologies";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Technologies/>
+      <Header />
+      <Technologies />
+      <Footer/>
     </div>
   );
 }
