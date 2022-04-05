@@ -1,0 +1,23 @@
+.dialogs {
+  display: grid;
+
+  grid-template-areas: "dialog message";
+  grid-template-columns: 25% 75%;
+  grid-gap: 10px;
+}
+
+.dialogsItems {
+  grid-area: dialog;
+  border: 1px solid blue;
+}
+
+.dialog {
+}
+
+.messages {
+  grid-area: message;
+  border: 1px solid blue;
+}
+
+.message {
+}
