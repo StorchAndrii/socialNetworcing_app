@@ -8,8 +8,8 @@ const MyPosts = () => {
     <div>
       myPost
       <AddPost />
-      <Post name='My 1 post!' message="Hi, how are you?" />
-      <Post name='My 2 post!' message="It`s my first post" />
+      <Post namePost="My 1 post!" message="Hi, how are you?" likePost='20' />
+      <Post namePost="My 2 post!" message="It`s my first post" likePost='50'/>
     </div>
   );
 };

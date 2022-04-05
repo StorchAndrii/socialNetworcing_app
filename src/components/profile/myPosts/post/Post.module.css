@@ -1,3 +1,9 @@
-.item img{
-    height: 80px;
+.item img {
+  height: 80px;
+  border-radius: 50%;
+}
+
+p.like:after {
+  content: "\2665";
+  color: red;
 }
