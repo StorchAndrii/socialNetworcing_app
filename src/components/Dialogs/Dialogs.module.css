@@ -1,23 +1,29 @@
+*{
+padding: 10px;
+}
+
 .dialogs {
   display: grid;
-
-  grid-template-areas: "dialog message";
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
 
 .dialogsItems {
-  grid-area: dialog;
   border: 1px solid blue;
 }
 
-.dialog {
+
+.dialogsItems .dialog{
 }
+
+.dialogsItems .active{
+  box-shadow: inset 0px 0px 5px 1px rgb(0 0 0 / 55%);
+  border-radius: 10px;
+
+  }
+  
 
 .messages {
-  grid-area: message;
   border: 1px solid blue;
 }
 
-.message {
-}
