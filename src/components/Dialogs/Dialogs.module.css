@@ -1,0 +1,25 @@
+
+
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+
+.dialogsItems {
+  border: 1px solid blue;
+}
+
+
+.dialogsItems .active{
+  font-size: 20px;
+  box-shadow: inset 0px 0px 5px 1px rgb(0 0 0 / 55%);
+  border-radius: 10px;
+
+  }
+  
+
+.messages {
+  border: 1px solid blue;
+}
+
