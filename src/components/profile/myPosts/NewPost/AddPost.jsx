@@ -4,7 +4,9 @@ import s from "./AddPost.module.css";
 const AddPost = () => {
   return (
     <form>
-      <textarea />
+      <div>
+        <textarea />
+      </div>
       <button>Add</button>
       <button>Delet</button>
     </form>

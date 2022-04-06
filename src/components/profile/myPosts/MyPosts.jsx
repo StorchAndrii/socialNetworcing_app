@@ -5,11 +5,15 @@ import Post from "./post/Post";
 
 const MyPosts = () => {
   return (
-    <div>
-      myPost
+    <div className={s.postsBlock}>
+      <h3>My Post</h3>
+      <div>
       <AddPost />
+      </div>
+      <div className={s.posts}>
       <Post namePost="My 1 post!" message="Hi, how are you?" likePost='20' />
       <Post namePost="My 2 post!" message="It`s my first post" likePost='50'/>
+      </div>
     </div>
   );
 };
