@@ -1,0 +1,16 @@
+
+.block{
+  margin: 0;
+  padding: 0;
+}
+
+.avatar img {
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 8px;
+}
+
+.name{
+  color: #fff;
+  text-align: center;
+}

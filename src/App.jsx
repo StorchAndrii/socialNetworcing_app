@@ -13,7 +13,7 @@ function App(props) {
   return (
     <div className="app-wrapper">
       <Header />
-      <Navbar />
+      <Navbar sideBar={props.state.sideBar} />
       <div className="app-wrapper-content">
         <Routes>
           <Route
@@ -21,7 +21,6 @@ function App(props) {
             element={<Profile profilePage={props.state.profilePage} />}
           />
           <Route
-            exact
             path="/dialogs/"
             element={<Dialogs dialogsPages={props.state.dialogsPages} />}
           />

@@ -1,26 +1,39 @@
-
-
 .dialogs {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 2fr 10fr;
+  grid-gap: 10px; */
+  /* grid - разделяет элементы по колонам и рядам.  */
+  display: grid;
+  /*  areas - расставляет обьекты согласно их псевдонимам */
+  grid-template-areas:
+    "dialog messages messages"
+    "dialog addMessage addMessage";
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: fr 2fr 2fr;
   grid-gap: 10px;
+  margin: 10px;
 }
 
 .dialogsItems {
-  border: 1px solid blue;
+  grid-area: dialog;
+  /* border: 1px solid blue; */
   text-align: center;
 }
 
-
-.dialogsItems .active{
+.dialogsItems .active {
   font-size: 20px;
   box-shadow: inset 0px 0px 5px 1px rgb(0 0 0 / 55%);
   border-radius: 10px;
-
-  }
-  
-
-.messages {
-  border: 1px solid blue;
 }
 
+.messages {
+  grid-area: messages;
+  border: 1px solid blue;
+  margin-right: 20px;
+}
+
+
+
+.addMessage {
+  grid-area: addMessage;
+}
