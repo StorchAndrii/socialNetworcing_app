@@ -21,7 +21,6 @@ function App(props) {
             element={<Profile profilePage={props.state.profilePage} />}
           />
           <Route
-            exact
             path="/dialogs/"
             element={<Dialogs dialogsPages={props.state.dialogsPages} />}
           />
