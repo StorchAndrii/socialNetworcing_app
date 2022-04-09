@@ -1,21 +1,33 @@
 import React from "react";
 import s from "./AddMessages.module.css";
 
-const AddMessages = () => {
-  let newMessage = React.createRef();
+const AddMessages = (props) => {
+  console.log(props)
+  let messageRef = React.createRef();
 
   let addMessages = () => {
-    let text = newMessage.current.value;
-    alert(text);
+    let text = messageRef.current.value;
+    props.addNewMessage(text)
   };
+  let changeMessageText = () => {
+    // let text = newMessage.current.value;
+    // console.log(text)
+    // props.updateNewMessageText(text);
+  };
+
   return (
-    <form>
+    <div>
       <div>
-        <textarea rows="5" cols="86" ref={newMessage} />
+        <textarea
+          rows="5"
+          cols="86"
+          ref={messageRef}
+          value={props.valueMessagess}
+          onChange={changeMessageText}
+        />
       </div>
       <button onClick={addMessages}>Add</button>
-      <button>Delet</button>
-    </form>
+    </div>
   );
 };
 

@@ -1,3 +1,4 @@
+import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 import { rerenderEntireTree } from "../render";
 
 let state = {
@@ -33,6 +34,7 @@ let state = {
       { id: 6, message: "Privet" },
       { id: 7, message: "Hello" },
     ],
+    valueMessagess: "<<<Storch>>>",
   },
   sideBar: {
     friends: [
@@ -69,4 +71,19 @@ export let updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
   rerenderEntireTree(state);
 };
+
+export let addNewMessage = (textMessage) => {
+  let newMessages = {
+    id: 15,
+    message: textMessage,
+  };
+  state.dialogsPages.messages.push(newMessages);
+  // state.dialogsPages.newPostText = "";
+  rerenderEntireTree(state);
+};
+// export let updateNewMessageText = (newMessa) => {
+// state.dialogsPages.newMessages = newMessa;
+// rerenderEntireTree(state);
+// };
+
 export default state;
