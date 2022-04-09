@@ -78,12 +78,13 @@ export let addNewMessage = (textMessage) => {
     message: textMessage,
   };
   state.dialogsPages.messages.push(newMessages);
-  // state.dialogsPages.newPostText = "";
+  state.dialogsPages.valueMessagess = "";
   rerenderEntireTree(state);
 };
-// export let updateNewMessageText = (newMessa) => {
-// state.dialogsPages.newMessages = newMessa;
-// rerenderEntireTree(state);
-// };
+
+export let updateNewMessageText = (newMessage) => {
+  state.dialogsPages.valueMessagess = newMessage;
+  rerenderEntireTree(state);
+};
 
 export default state;
