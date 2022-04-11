@@ -1,10 +1,11 @@
-import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () => {
+  console.log('state is changed')
+}
 
 let state = {
   profilePage: {
     posts: [
-      { id: 1, name: "My 1 post!", message: "Hi, how are you?", likePost: 20 },
+      {id: 1, name: "My 1 post!", message: "Hi, how are you?", likePost: 20},
       {
         id: 2,
         name: "My 2 post!",
@@ -16,23 +17,23 @@ let state = {
   },
   dialogsPages: {
     dialogs: [
-      { id: 1, name: "Dima" },
-      { id: 2, name: "Andrey" },
-      { id: 3, name: "Lev" },
-      { id: 4, name: "Mike" },
-      { id: 5, name: "Stiv" },
-      { id: 6, name: "Romero" },
-      { id: 7, name: "Adam" },
+      {id: 1, name: "Dima"},
+      {id: 2, name: "Andrey"},
+      {id: 3, name: "Lev"},
+      {id: 4, name: "Mike"},
+      {id: 5, name: "Stiv"},
+      {id: 6, name: "Romero"},
+      {id: 7, name: "Adam"},
     ],
 
     messages: [
-      { id: 1, message: "Hi" },
-      { id: 2, message: "Hello" },
-      { id: 3, message: "How are you?" },
-      { id: 4, message: "Yo!" },
-      { id: 5, message: "Yo men!" },
-      { id: 6, message: "Privet" },
-      { id: 7, message: "Hello" },
+      {id: 1, message: "Hi"},
+      {id: 2, message: "Hello"},
+      {id: 3, message: "How are you?"},
+      {id: 4, message: "Yo!"},
+      {id: 5, message: "Yo men!"},
+      {id: 6, message: "Privet"},
+      {id: 7, message: "Hello"},
     ],
     valueMessagess: "<<<Storch>>>",
   },
@@ -57,7 +58,9 @@ let state = {
   },
 };
 
-export let addPost = () => {
+window.state = state;
+
+export const addPost = () => {
   let newPost = {
     id: 5,
     message: state.profilePage.newPostText,
@@ -67,12 +70,12 @@ export let addPost = () => {
   state.profilePage.newPostText = "";
   rerenderEntireTree(state);
 };
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
   rerenderEntireTree(state);
 };
 
-export let addNewMessage = (textMessage) => {
+export const addNewMessage = (textMessage) => {
   let newMessages = {
     id: 15,
     message: textMessage,
@@ -82,9 +85,13 @@ export let addNewMessage = (textMessage) => {
   rerenderEntireTree(state);
 };
 
-export let updateNewMessageText = (newMessage) => {
+export const updateNewMessageText = (newMessage) => {
   state.dialogsPages.valueMessagess = newMessage;
   rerenderEntireTree(state);
 };
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer; //наблюдатель
+}
 
 export default state;
