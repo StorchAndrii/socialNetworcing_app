@@ -12,9 +12,8 @@ const MyPosts = (props) => {
       <h3>My Post</h3>
       <div>
         <AddPost
-          updateNewPostText={props.updateNewPostText}
           newPostText={props.newPostText}
-          addPost={props.addPost}
+          dispatch={props.dispatch}
         />
       </div>
       <div className={s.posts}>{postsElement}</div>

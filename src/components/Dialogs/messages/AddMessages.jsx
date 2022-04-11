@@ -2,17 +2,15 @@ import React from "react";
 import s from "./AddMessages.module.css";
 
 const AddMessages = (props) => {
-  console.log(props);
   let messageRef = React.createRef();
 
   let addMessages = () => {
     let text = messageRef.current.value;
-    props.addNewMessage(text);
+    props.dispatch({ type: "NEW-MESSAGE" });
   };
   let changeMessageText = () => {
     let text = messageRef.current.value;
-    console.log(text);
-    props.updateNewMessageText(text);
+    props.dispatch({ type: "UPDATE-NEW-MESSAGE-TEXT", newText: text });
   };
 
   return (
