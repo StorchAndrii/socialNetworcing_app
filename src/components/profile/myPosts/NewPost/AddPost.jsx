@@ -7,15 +7,24 @@ const AddPost = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
+
     let text = newPostElement.current.value;
     props.addPost(text);
-    newPostElement.current.value = "";
+  };
+
+  let onChengePostText = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
   };
 
   return (
     <div>
       <div>
-        <textarea ref={newPostElement} />
+        <textarea
+          ref={newPostElement}
+          value={props.newPostText}
+          onChange={onChengePostText}
+        />
       </div>
       <button onClick={addPost}>Add</button>
     </div>

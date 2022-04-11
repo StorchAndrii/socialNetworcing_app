@@ -1,9 +1,11 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () => {
+  console.log('state is changed')
+}
 
 let state = {
   profilePage: {
     posts: [
-      { id: 1, name: "My 1 post!", message: "Hi, how are you?", likePost: 20 },
+      {id: 1, name: "My 1 post!", message: "Hi, how are you?", likePost: 20},
       {
         id: 2,
         name: "My 2 post!",
@@ -11,27 +13,29 @@ let state = {
         likePost: 50,
       },
     ],
+    newPostText: "Hello Storch",
   },
   dialogsPages: {
     dialogs: [
-      { id: 1, name: "Dima" },
-      { id: 2, name: "Andrey" },
-      { id: 3, name: "Lev" },
-      { id: 4, name: "Mike" },
-      { id: 5, name: "Stiv" },
-      { id: 6, name: "Romero" },
-      { id: 7, name: "Adam" },
+      {id: 1, name: "Dima"},
+      {id: 2, name: "Andrey"},
+      {id: 3, name: "Lev"},
+      {id: 4, name: "Mike"},
+      {id: 5, name: "Stiv"},
+      {id: 6, name: "Romero"},
+      {id: 7, name: "Adam"},
     ],
 
     messages: [
-      { id: 1, message: "Hi" },
-      { id: 2, message: "Hello" },
-      { id: 3, message: "How are you?" },
-      { id: 4, message: "Yo!" },
-      { id: 5, message: "Yo men!" },
-      { id: 6, message: "Privet" },
-      { id: 7, message: "Hello" },
+      {id: 1, message: "Hi"},
+      {id: 2, message: "Hello"},
+      {id: 3, message: "How are you?"},
+      {id: 4, message: "Yo!"},
+      {id: 5, message: "Yo men!"},
+      {id: 6, message: "Privet"},
+      {id: 7, message: "Hello"},
     ],
+    valueMessagess: "<<<Storch>>>",
   },
   sideBar: {
     friends: [
@@ -54,13 +58,40 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+window.state = state;
+
+export const addPost = () => {
   let newPost = {
     id: 5,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likePost: 0,
   };
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = "";
   rerenderEntireTree(state);
 };
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+};
+
+export const addNewMessage = (textMessage) => {
+  let newMessages = {
+    id: 15,
+    message: textMessage,
+  };
+  state.dialogsPages.messages.push(newMessages);
+  state.dialogsPages.valueMessagess = "";
+  rerenderEntireTree(state);
+};
+
+export const updateNewMessageText = (newMessage) => {
+  state.dialogsPages.valueMessagess = newMessage;
+  rerenderEntireTree(state);
+};
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer; //наблюдатель
+}
+
 export default state;

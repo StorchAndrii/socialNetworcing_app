@@ -11,7 +11,11 @@ const MyPosts = (props) => {
     <div className={s.postsBlock}>
       <h3>My Post</h3>
       <div>
-        <AddPost addPost={props.addPost} />
+        <AddPost
+          updateNewPostText={props.updateNewPostText}
+          newPostText={props.newPostText}
+          addPost={props.addPost}
+        />
       </div>
       <div className={s.posts}>{postsElement}</div>
     </div>

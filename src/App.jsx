@@ -18,11 +18,11 @@ function App(props) {
         <Routes>
           <Route
             path="/profile/"
-            element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} />}
+            element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>}
           />
           <Route
             path="/dialogs/"
-            element={<Dialogs dialogsPages={props.state.dialogsPages} />}
+            element={<Dialogs dialogsPages={props.state.dialogsPages} addNewMessage={props.addNewMessage}  updateNewMessageText={props.updateNewMessageText}/>}
           />
           <Route path="/news/" element={<News />} />
           <Route path="/music/" element={<Music />} />
