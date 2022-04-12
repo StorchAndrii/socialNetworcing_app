@@ -1,20 +1,22 @@
 import React from "react";
 import s from "./AddPost.module.css";
-
-// !! React.createRef()- реакт создает ссылку к обьекту.
+import {
+  addPostActionCreator,
+  updateNewPostTextActionCreator,
+} from "../../../../redux/state";
 
 const AddPost = (props) => {
+  // React.createRef()- реакт создает ссылку к обьекту.
   let newPostElement = React.createRef();
 
   let addPost = () => {
     let text = newPostElement.current.value;
-    props.dispatch({ type: "ADD-POST" });
+    props.dispatch(addPostActionCreator());
   };
 
   let onChengePostText = () => {
     let text = newPostElement.current.value;
-    let action = { type: "UPDATE-NEW-POST-TEXT", newText: text };
-    props.dispatch(action);
+    props.dispatch(updateNewPostTextActionCreator(text));
   };
 
   return (
