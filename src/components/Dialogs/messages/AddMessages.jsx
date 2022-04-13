@@ -5,15 +5,13 @@ import {
   updateNewMessageTextActionCreator,
 } from "../../../redux/state";
 
-
 const AddMessages = (props) => {
   let messageRef = React.createRef();
 
-  let addMessages = () => {
-    let text = messageRef.current.value;
+  const addMessages = () => {
     props.dispatch(addNewMessageActionCreator());
   };
-  let changeMessageText = () => {
+  const changeMessageText = () => {
     let text = messageRef.current.value;
     props.dispatch(updateNewMessageTextActionCreator(text));
   };
@@ -24,12 +22,13 @@ const AddMessages = (props) => {
         <textarea
           rows="5"
           cols="86"
+          placeholder='message...'
           ref={messageRef}
           value={props.valueMessagess}
           onChange={changeMessageText}
         />
       </div>
-      <button onClick={addMessages}>Add</button>
+      <button onClick={addMessages}>send</button>
     </div>
   );
 };

@@ -1,11 +1,7 @@
 .nav {
   grid-area: nav;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    4deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(189, 201, 255, 1) 100%
-  );
+  background: linear-gradient(4deg, #3f4e6a 0%, #bebebe 100%);
   min-height: 1000px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
