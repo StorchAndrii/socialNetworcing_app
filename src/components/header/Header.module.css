@@ -1,13 +1,10 @@
 .header {
   grid-area: header;
   background: rgb(189, 201, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(189, 201, 255, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
+  background: linear-gradient(4deg, #bebebe 0%, #3f4e6a 100%);
+
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .header img {
   width: 40px;

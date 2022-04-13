@@ -93,7 +93,7 @@ let store = {
     }
     else if (action.type === addNewMessage) {
       let newMessages = {
-        id: 15,
+        id: 8,
         message: this._state.dialogsPages.valueMessagess,
       };
       this._state.dialogsPages.messages.push(newMessages);
