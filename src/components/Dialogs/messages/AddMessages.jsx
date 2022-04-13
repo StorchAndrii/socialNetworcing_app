@@ -3,7 +3,7 @@ import s from "./AddMessages.module.css";
 import {
   addNewMessageActionCreator,
   updateNewMessageTextActionCreator,
-} from "../../../redux/state";
+} from "../../../redux/dialogsReducer";
 
 const AddMessages = (props) => {
   let messageRef = React.createRef();
