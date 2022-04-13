@@ -1,7 +1,6 @@
 const ADD_NEW_MESSAGE = "ADD-NEW-MESSAGE";
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
-<<<<<<< HEAD
 let initState = {
   dialogs: [
     { id: 1, name: "Dima" },
@@ -25,10 +24,7 @@ let initState = {
   valueMessagess: "",
 };
 
-const dialogsReducer = (state = initState, action) => {
-=======
-const dialogsReducer = (state, action) => {
->>>>>>> origin/Redux
+const dialogsReducer = (state= initState, action) => {
   switch (action.type) {
     case ADD_NEW_MESSAGE:
       let newMessages = {
