@@ -3,7 +3,7 @@ import s from "./AddPost.module.css";
 import {
   addPostActionCreator,
   updateNewPostTextActionCreator,
-} from "../../../../redux/state";
+} from "../../../../redux/profileReducer";
 
 const AddPost = (props) => {
   // React.createRef()- реакт создает ссылку к обьекту.
