@@ -21,21 +21,21 @@ let initState = {
     { id: 6, message: "Privet" },
     { id: 7, message: "Hello" },
   ],
-  valueMessagess: "",
+  newMessageBody: "",
 };
 
-const dialogsReducer = (state= initState, action) => {
+const dialogsReducer = (state = initState, action) => {
   switch (action.type) {
     case ADD_NEW_MESSAGE:
       let newMessages = {
         id: 8,
-        message: state.valueMessagess,
+        message: state.newMessageBody,
       };
       state.messages.push(newMessages);
-      state.valueMessagess = "";
+      state.newMessageBody = "";
       return state;
     case UPDATE_NEW_MESSAGE_TEXT:
-      state.valueMessagess = action.message;
+      state.newMessageBody = action.message;
       return state;
     default:
       return state;
