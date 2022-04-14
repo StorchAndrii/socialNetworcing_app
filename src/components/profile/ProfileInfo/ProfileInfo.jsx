@@ -18,6 +18,7 @@ const ProfileInfo = () => {
             src="https://i.pinimg.com/originals/18/a3/59/18a359290b7267918ff8d1420d71cb91.jpg"
             alt="avatar"
           />
+            <div>Gomer Simoson</div>
         </div>
       </div>
     </div>
