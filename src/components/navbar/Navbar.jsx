@@ -4,8 +4,9 @@ import s from "./Navbar.module.css";
 import NavFriends from "./NavFriends/NavFrends";
 
 const Navbar = (props) => {
-
-    let friendsElement = props.sideBar.friends.map((f) => (<NavFriends name={f.name} avatar={f.img} />));
+  let friendsElement = props.sideBar.friends.map((f) => (
+    <NavFriends key={f.id} name={f.name} avatar={f.img} />
+  ));
 
   return (
     <nav className={s.nav}>
@@ -49,13 +50,11 @@ const Navbar = (props) => {
           Settings
         </NavLink>
       </div>
-      
+
       <div className={s.friends}>
         <h3>Friends</h3>
-      
-      <div className={s.blockFriends}>
-        {friendsElement}
-      </div>
+
+        <div className={s.blockFriends}>{friendsElement}</div>
       </div>
     </nav>
   );

@@ -19,7 +19,7 @@ let initState = {
     { id: 4, message: "Yo!" },
     { id: 5, message: "Yo men!" },
     { id: 6, message: "Privet" },
-    { id: 7, message: "Hello" },
+    { id: 7, message: "Hello men" },
   ],
   newMessageBody: "",
 };
