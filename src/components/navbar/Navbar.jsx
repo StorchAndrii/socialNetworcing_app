@@ -4,7 +4,6 @@ import s from "./Navbar.module.css";
 import NavFriends from "./NavFriends/NavFriends";
 
 const Navbar = (props) => {
-  debugger;
   let friendsElement = props.sideBar.friends.map((f) => (
     <NavFriends key={f.id} name={f.name} avatar={f.img} />
   ));
