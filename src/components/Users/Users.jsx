@@ -9,7 +9,7 @@ const Users = (props) => {
         followed: false,
         fullName: "Bart Simpson",
         img: "https://png.pngitem.com/pimgs/s/198-1982799_imagenes-en-png-bart-simpson-butt-transparent-png.png",
-        status: "I am happy",
+        status: "I am Devils.... 👿",
         location: {
           country: "USA",
           city: "Springfield",
@@ -31,7 +31,7 @@ const Users = (props) => {
         followed: false,
         fullName: "Lisa Simpson",
         img: "https://yt3.ggpht.com/ytc/AAUvwngGCH2v4hHrxufLNWOUXj0fClMQME05lTJjfg9e=s900-c-k-c0x00ffffff-no-rj",
-        status: "I am happy",
+        status: "I love music",
         location: {
           country: "USA",
           city: "Springfield",
@@ -42,7 +42,7 @@ const Users = (props) => {
         followed: false,
         fullName: "Maggie Simpson",
         img: "https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png",
-        status: "I am happy",
+        status: "Be...be...be..🍼",
         location: {
           country: "USA",
           city: "Springfield",
@@ -54,14 +54,15 @@ const Users = (props) => {
     <div>
       <h2>Users</h2>
       {props.users.map((u) => (
-        <div key={u.id}>
-          <span>
+        <div key={u.id} className={s.container}>
+          <span className={s.block1}>
             <div>
               <img className={s.avatar} src={u.img} alt="avatar" />
             </div>
             <div>
               {u.followed ? (
                 <button
+                  className={s.button}
                   onClick={() => {
                     props.unfollow(u.id);
                   }}
@@ -70,6 +71,7 @@ const Users = (props) => {
                 </button>
               ) : (
                 <button
+                  className={s.button}
                   onClick={() => {
                     props.follow(u.id);
                   }}
@@ -79,14 +81,14 @@ const Users = (props) => {
               )}
             </div>
           </span>
-          <span>
-            <span>
-              <div>{u.fullName}</div>
+          <span className={s.infoBlock}>
+            <span className={s.lInfo}>
+              <div className={s.name}>{u.fullName}</div>
               <div>{u.status}</div>
             </span>
-            <span>
-              <div>{u.location.country}</div>
-              <div>{u.location.city}</div>
+            <span className={s.rInfo}>
+              <div className={s.country}>{u.location.country}</div>
+              <div className={s.country}>{u.location.city}</div>
             </span>
           </span>
         </div>
