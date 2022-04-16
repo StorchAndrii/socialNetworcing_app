@@ -1,0 +1,62 @@
+h2 {
+    text-align: center;
+}
+
+.avatar {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #3f4e6a;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 30px;
+    justify-items: center;
+    margin: 20px;
+}
+
+.block1 {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+}
+
+.infoBlock {
+    background-color: white;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #3f4e6a;
+    margin: 0 30px 30px 0;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+
+}
+.lInfo, .rInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: 600;
+}
+.country {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.button{
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+}
