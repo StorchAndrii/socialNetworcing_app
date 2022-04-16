@@ -9,7 +9,7 @@ import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import NavbarContainer from "./components/navbar/NavbarContainer";
 
-function App(props) {
+function App() {
   return (
     <div className="app-wrapper">
       <Header />
@@ -17,10 +17,7 @@ function App(props) {
       <div className="app-wrapper-content">
         <Routes>
           <Route path="/profile/" element={<Profile />} />
-          <Route
-            path="/dialogs/"
-            element={<DialogsContainer store={props.store} />}
-          />
+          <Route path="/dialogs/" element={<DialogsContainer />} />
           <Route path="/news/" element={<News />} />
           <Route path="/music/" element={<Music />} />
           <Route path="/settings/" element={<Settings />} />
