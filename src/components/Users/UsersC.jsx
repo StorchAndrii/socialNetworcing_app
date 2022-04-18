@@ -3,22 +3,50 @@ import s from "./Users.module.css";
 import * as axios from "axios";
 
 class UsersC extends React.Component {
-  getUsers = () => {
-    if (this.props.users.length === 0) {
-      axios
-        .get("https://randomuser.me/api/?page=3&results=4")
-        .then((response) => {
-          this.props.setUsers(response.data.results);
-        });
-    }
-  };
+  componentDidMount() {
+    axios
+      .get(
+        `https://randomuser.me/api/?page=${this.props.currentPage}&results=${this.props.pageSize}`
+      )
+      .then((response) => {
+        this.props.setUsers(response.data.results);
+      });
+  }
 
+  onPageChanged = (pageNumber) => {
+    this.props.getCurrentPage(pageNumber);
+    axios
+      .get(
+        `https://randomuser.me/api/?page=${pageNumber}&results=${this.props.pageSize}`
+      )
+      .then((response) => {
+        this.props.setUsers(response.data.results);
+      });
+  };
   render() {
+    let pagesCount = Math.ceil(this.props.totalUserCount / this.props.pageSize);
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
+      pages.push(i);
+    }
+
     return (
       <div>
         <h2>Users</h2>
-        <button onClick={this.getUsers}>getUser</button>
-
+        <div className={s.numberPages}>
+          {pages.map((p) => {
+            return (
+              <span
+                className={this.props.currentPage === p && s.selectedActive}
+                onClick={(e) => {
+                  this.onPageChanged(p);
+                }}
+              >
+                {p}
+              </span>
+            );
+          })}
+        </div>
         {this.props.users.map((u) => (
           <div key={u.id} className={s.container}>
             <span className={s.block1}>
