@@ -1,6 +1,19 @@
 h2 {
     text-align: center;
 }
+.numberPages{
+margin-left: 50px;
+    cursor: pointer;
+}
+.numberPages span{
+    padding: 3px;
+}
+
+.selectedActive{
+    font-size: 18px;
+    padding: 3px;
+    font-weight: bold;
+}
 
 .avatar {
     max-width: 120px;
