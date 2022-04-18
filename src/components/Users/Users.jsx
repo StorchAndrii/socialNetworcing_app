@@ -3,14 +3,20 @@ import s from "./Users.module.css";
 import * as axios from "axios";
 
 const Users = (props) => {
-  if (props.users.length === 0) {
-    axios.get("https://randomuser.me/api/").then((response) => {
-      props.setUsers(response.data.results);
-    });
-  }
+  let getUsers = () => {
+    if (props.users.length === 0) {
+      axios
+        .get("https://randomuser.me/api/?page=3&results=4")
+        .then((response) => {
+          props.setUsers(response.data.results);
+        });
+    }
+  };
   return (
     <div>
       <h2>Users</h2>
+      <button onClick={getUsers}>getUser</button>
+
       {props.users.map((u) => (
         <div key={u.id} className={s.container}>
           <span className={s.block1}>
@@ -42,8 +48,7 @@ const Users = (props) => {
           <span className={s.infoBlock}>
             <span className={s.lInfo}>
               <div className={s.name}>
-                {u.name.first}
-                {u.name.last}
+                {u.name.first} {u.name.last}
               </div>
               <div>{u.email}</div>
             </span>
