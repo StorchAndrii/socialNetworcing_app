@@ -1,22 +1,29 @@
 import React from "react";
 import s from "./Users.module.css";
-import * as axios from "axios";
 
 const Users = (props) => {
-  let getUsers = () => {
-    if (props.users.length === 0) {
-      axios
-        .get("https://randomuser.me/api/?page=3&results=4")
-        .then((response) => {
-          props.setUsers(response.data.results);
-        });
-    }
-  };
+  let pagesCount = Math.ceil(props.totalUserCount / props.pageSize);
+  let pages = [];
+  for (let i = 1; i <= pagesCount; i++) {
+    pages.push(i);
+  }
   return (
     <div>
       <h2>Users</h2>
-      <button onClick={getUsers}>getUser</button>
-
+      <div className={s.numberPages}>
+        {pages.map((p) => {
+          return (
+            <span
+              className={props.currentPage === p && s.selectedActive}
+              onClick={(e) => {
+                props.onPageChanged(p);
+              }}
+            >
+              {p}
+            </span>
+          );
+        })}
+      </div>
       {props.users.map((u) => (
         <div key={u.id} className={s.container}>
           <span className={s.block1}>
