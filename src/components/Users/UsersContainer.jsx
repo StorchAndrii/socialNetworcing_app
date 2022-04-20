@@ -1,15 +1,14 @@
 import { connect } from "react-redux";
 import Users from "./Users";
 import {
-  followAC,
-  getCurrentPageAC,
-  setUsersAC,
-  toggleIsFetchingAC,
-  unfollowAC,
+  follow,
+  getCurrentPage,
+  setUsers,
+  toggleIsFetching,
+  unfollow,
 } from "../../redux/usersReducer";
 import React from "react";
 import * as axios from "axios";
-import load from "../../assets/images/load.gif";
 import Preloader from "../common/Preloader/Preloader";
 
 class UsersAPI extends React.Component {
@@ -68,26 +67,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(followAC(userId));
-    },
-    unfollow: (userId) => {
-      dispatch(unfollowAC(userId));
-    },
-    setUsers: (users) => {
-      dispatch(setUsersAC(users));
-    },
-    getCurrentPage: (pageNumber) => {
-      dispatch(getCurrentPageAC(pageNumber));
-    },
-    toggleIsFetching: (isFetching) => {
-      dispatch(toggleIsFetchingAC(isFetching));
-    },
-  };
-};
-
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPI);
+const UsersContainer = connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setUsers,
+  getCurrentPage,
+  toggleIsFetching,
+})(UsersAPI);
 
 export default UsersContainer;
