@@ -6,6 +6,7 @@ const ProfileInfo = (props) => {
   if (!props.profile) {
     return <Preloader />;
   }
+  const profile = props.profile.results[0];
   return (
     <div>
       <div className={s.bar}>
@@ -17,14 +18,13 @@ const ProfileInfo = (props) => {
       </div>
       <div className={s.descriptionBlock}>
         <div>
-          <img
-            className={s.avatar}
-            src={props.profile.photos.large}
-            alt="avatar"
-          />
-          <div>{props.profile.fullName}</div>
-          <div>Mail: {props.profile.contacts.mainLink}</div>
-          <div>GitHub: {props.profile.contacts.github}</div>
+          <img className={s.avatar} src={profile.picture.large} alt="avatar" />
+          <div>
+            {profile.name.first} {profile.name.last}
+          </div>
+          <div>Location: {profile.location.city}</div>
+          <div>Mail: {profile.email}</div>
+          <div>Cell: {profile.cell}</div>
         </div>
       </div>
     </div>
