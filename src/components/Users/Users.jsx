@@ -27,7 +27,7 @@ const Users = (props) => {
         })}
       </div>
       {props.users.map((u) => (
-        <div key={u.name.last} className={s.container}>
+        <div key={u.id} className={s.container}>
           <span className={s.block1}>
             <div>
               <NavLink to={"/profile/" + u.name.first}>

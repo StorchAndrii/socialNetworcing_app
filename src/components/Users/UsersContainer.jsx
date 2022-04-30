@@ -29,7 +29,7 @@ class UsersAPI extends React.Component {
     this.props.getCurrentPage(pageNumber);
     axios
       .get(
-        `https://randomuser.me/api/?page=${pageNumber}&results=${this.props.pageSize}`
+        `http://localhost:3005/users?page=${pageNumber}&totalCount=${this.props.pageSize}`
       )
       .then((response) => {
         this.props.toggleIsFetching(false);
